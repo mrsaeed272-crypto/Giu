@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FluxCut — Modern Light</title>
+  <meta name="description" content="FluxCut - convert long videos into short clips. Upload, trim, download." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">FluxCut</div>
+    <nav class="nav">
+      <a href="#how">How it works</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <h1>Convert long videos into short, shareable clips — instantly</h1>
+      <p class="lead">Upload, choose start & duration, and download your short clip. Lightweight demo frontend ready for GitHub Pages.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#upload">Get started</a>
+        <a class="btn ghost" href="#how">Learn more</a>
+      </div>
+    </section>
+
+    <section id="upload" class="card upload">
+      <h2>Upload and create clip</h2>
+      <form id="uploadForm">
+        <label class="field">
+          <span>Choose video</span>
+          <input id="videoFile" type="file" accept="video/*" required />
+        </label>
+        <div class="row">
+          <label class="small"><span>Start (s)</span><input id="start" type="number" value="0" min="0" /></label>
+          <label class="small"><span>Duration (s)</span><input id="duration" type="number" value="15" min="1" /></label>
+        </div>
+        <div class="row actions">
+          <button id="uploadBtn" class="btn primary">Upload & Create Clip</button>
+          <button id="clearBtn" type="button" class="btn ghost">Clear</button>
+        </div>
+      </form>
+      <div id="status" class="meta">Status: idle</div>
+      <div id="downloadArea"></div>
+    </section>
+
+    <section id="how" class="card">
+      <h3>How it works</h3>
+      <ol>
+        <li>Upload a video file.</li>
+        <li>Server trims the requested range using ffmpeg.</li>
+        <li>Download the created clip from the returned link.</li>
+      </ol>
+      <p class="note">This is a frontend demo. Backend expected at <code>http://localhost:4000</code> by default. Edit <code>script.js</code> to change API endpoint.</p>
+    </section>
+
+    <section id="features" class="card">
+      <h3>Features (demo)</h3>
+      <ul>
+        <li>Upload & trim</li>
+        <li>Thumbnail extraction (backend)</li>
+        <li>Transcription placeholder (backend)</li>
+        <li>Responsive modern light UI</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h3>Contact</h3>
+      <p>If you want backend hosting or help with deployment, ping me.</p>
+    </section>
+
+  </main>
+
+  <footer class="foot">© FluxCut — Built for creators</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
